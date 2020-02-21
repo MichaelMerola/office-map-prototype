@@ -1,5 +1,6 @@
 # Office Map
-**protoype version July 2018
+**protoype version July 2018 at Zayo Group
+**updated version February 2018 for BUSM Capstone
 
 ## Objective
 users can search for employees based on name, team, skills, projects, experience, etc.. or locations around office like printer, coffee, restrooms, meeting rooms, etc..
