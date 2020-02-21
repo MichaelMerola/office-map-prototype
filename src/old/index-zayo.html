@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>vantage proto</title>
+    <title>intern</title>
 
     <!-- BOOTSTRAP -->
     <meta charset="utf-8">
@@ -10,13 +10,13 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="../mdbootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../mdbootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="../mdbootstrap/css/mdb.min.css" rel="stylesheet">
+    <link href="../../mdbootstrap/css/mdb.min.css" rel="stylesheet">
 
     <!-- CUSTOM -->
-    <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="styles-zayo.css">
+    <script type="text/javascript" src="main-zayo.js"></script>
 </head>
 
 <body onload="start()">
@@ -24,29 +24,32 @@
 <div class="grid">
     <div class="span-col-9" id="header">
         <!-- HEADER -->
-        <h1 class="title" style="color:rgb(241, 241, 241); font-weight:400;">
-            <i class="fa fa-bars" id="stack-icon"></i>
-            <span class="name-title">VANTAGE</span>
+        <h1 id="title" style="color:rgb(241, 241, 241); font-weight:400;">
+            ZAYO EMPLOYEE MAP
         </h1>
-
-        <!-- SEARCH BAR -->
-        <form onsubmit="return false" id="skill-search" class="searchbar">
-            <i class="fa fa-search search-icon" aria-hidden="true"></i>
-            <input class="form-control search-custom" type="text"
-                placeholder="search for names, teams, skills, locations..." aria-label="Search"/>
-            <input type="submit" style="display:none;" onclick="searchSkills()"/>
-        </form>
     </div>
 
     <div class="span-col-7" id="body">
         <!-- BODY -->
 
         <div id="body-container" >
+
+            <!-- SEARCH BAR -->
             <div>
+                <form onsubmit="return false" id="skill-search">
+                    <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                    <input class="form-control search-custom" type="text"
+                        placeholder="search for names, teams, skills, locations..." aria-label="Search"/>
+                    <input type="submit" style="display:none;" onclick="searchSkills()"/>
+                </form>
+                
                 <ul id="map-item">
                     <!-- MAP -->
-                    <img src="assets/boulder-east-map.PNG" id="map">
+                    <img src="../assets/boulder-east-map.PNG" id="map">
                 </ul>
+                <div>
+                    <button id="office-label" class="btn btn-default">Boulder East</button>
+                </div>
             </div>
 
             <div style="display: flex">
@@ -57,7 +60,7 @@
                         <p style="font-weight: 300; font-size: 10pt;">CORE Developer</p>
                     </div>
                     <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('riso'))">
-                        <img src="assets/riso.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
+                        <img src="../assets/riso.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
 
                 <!-- MICHAEL MEROLA -->
@@ -67,7 +70,7 @@
                             <p style="font-weight: 300; font-size: 10pt;">CORE Intern</p>
                     </div>
                     <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('merola'))">
-                        <img src="assets/mmerola.png" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
+                        <img src="../assets/mmerola.png" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
 
                 <!-- ALEX ACKERMAN -->
@@ -77,22 +80,27 @@
                         <p style="font-weight: 300; font-size: 10pt;">CORE Manager</p>
                     </div>
                     <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('alex'))">
-                        <img src="assets/alexack.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
+                        <img src="../assets/alexack.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
 
-                <!-- LUIS VEGA -->
+                <!-- JON SMITH -->
                 <div class="prof-drop" id="jon-button">
                     <div class="prof-card">
-                        <p style="font-weight: 400; font-size: 12pt;">Luis Vega
-                            <!-- <i class="far fa-dot-circle"></i> -->
-                        </p>
+                        <p style="font-weight: 400; font-size: 12pt; margin-bottom: 1px;">Jon Smith</p>
                         <p style="font-weight: 300; font-size: 10pt;">Sales Manager</p>
                     </div>
                     <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('jon'))">
-                        <img src="assets/luis.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
+                        <img src="../assets/profile-pic.png" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
 
             </div>
+
+            <!-- TEAM LABELS -->
+            <!-- FIX POSITIONING -->
+            <!-- <button id="core-label" class="btn btn-default">CORE Team</button>
+            <button id="tranzact-label" class="btn btn-default">Tranzact Team</button>
+            <button id="it-label" class="btn btn-default">IT</button>
+            <button id="kitchen-label" class="btn btn-default">Kitchen</button> -->
 
             <button id="coffee-label" class="btn btn-default coffee-btn" onclick="displayDetail(document.getElementById('coffee'))">
                 Coffee Bot</button>
@@ -103,17 +111,9 @@
 
     <div class="span-col-2" id="sidebar">
 
-        <div style="display: inline-flex; margin-left: 78px;">
-            <button id="office-label" class="btn btn-default">
-                <span>Boulder East <i 
-                style="right: -10px;"
-                class="fa fa-caret-down"></i></span>
-            </button>
-        </div>
-
         <!-- PLACEHOLDER -->
         <div class="employee-detail" id="default-detail">
-            <!-- Boulder, East Office  -->
+            ...select an icon to display details...
         </div>
 
         <!-- RICHARD SELIGA-->
@@ -123,7 +123,7 @@
 
                 <div id="info-col1">
 
-                    <img src="assets/riso.jpg" id="prof">
+                    <img src="../assets/riso.jpg" id="prof">
                     <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
 
                 </div>
@@ -195,7 +195,7 @@
 
                 <div id="info-col1">
 
-                    <img src="assets/mmerola.png" id="prof">
+                    <img src="../assets/mmerola.png" id="prof">
                     <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
 
                 </div>
@@ -258,7 +258,7 @@
     
                     <div id="info-col1">
     
-                        <img src="assets/alexack.jpg" id="prof">
+                        <img src="../assets/alexack.jpg" id="prof">
                         <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
     
                     </div>
@@ -314,23 +314,23 @@
     
         </div>
 
-        <!-- LUIS VEGA -->
+        <!-- JON SMITH -->
         <div class="employee-detail" id="jon">
 
             <div id="info">
 
                 <div id="info-col1">
 
-                    <img src="assets/luis.jpg" id="prof">
+                    <img src="../assets/profile-pic.png" id="prof">
                     <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
 
                 </div>
 
                 <div id="info-col2">
-                    <h3>Luis Vega</h3>
+                    <h3>Jon Smith</h3>
                     <p>Boulder East</p>
                     <p>(719) 999-9999</p>
-                    <button type="button" id="email-btn" class="btn btn-default">luis.vega@vantage.com</button>
+                    <button type="button" id="email-btn" class="btn btn-default">jon.smith@zayo.com</button>
  
                 </div>
 
@@ -377,7 +377,7 @@
 
                 <div>
 
-                    <img src="assets/coffee.jpg" id="coff-pic">
+                    <img src="../assets/coffee.jpg" id="coff-pic">
     
                 </div>
     
@@ -401,8 +401,6 @@
                         <p>Chocolate Chai</p>
         
                 </div>
-    
-                
     
             </div>
     </div>

@@ -54,7 +54,7 @@ function displayDetail(c) {
             elements[i].style.display = "flex";
         }
     }
-    else if (input === "luis" || input === "luis vega"){
+    else if (input === "jon smith"){
         document.getElementById("jon-button").style.display = "flex";
     }
     else if (input === "coffee") {

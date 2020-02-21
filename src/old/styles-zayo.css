@@ -22,27 +22,22 @@ h4 {
 	font-weight: 350;
 }
 
-.title {
+#title {
 	font-size: 27pt;
+    text-align: center;
     margin-top: 13px;
-}
-.name-title {
-    margin-left: 1%;
-    font-weight: bold;
-    letter-spacing: 1px;
 }
 #header {
 	z-index: 999;
-	background-color: rgb(19, 91, 150);
-	/* box-shadow: 0px 0px 15px 1px rgba(0,0,0,.5); */
+	text-align: center;
+	background-color: darkorange;
+	box-shadow: 0px 0px 15px 1px rgba(0,0,0,.5);
 	width: 100%;
 	height: 70px;
 	top: 0;
 	left: 0;
 	position: fixed;
-    grid-area: header;
-    
-    font-style: italic;
+	grid-area: header;
 }
 #body {
 	/* height: 100%;
@@ -50,13 +45,8 @@ h4 {
 	grid-area: body;
 }
 #sidebar {
-    position: fixed;
 	grid-area: sidebar;
-    height: 100%;
-    top: 80px;
-}
-.searchbar {
-    margin: 35px 80px;
+	height: 100%;
 }
 
 #body-container {
@@ -79,10 +69,6 @@ h4 {
 	left: 17px;
     top: 6px;
     position: relative;
-}
-#stack-icon {
-    right: 20px;
-    position: absolute;
 }
 .search-custom{
 	margin-top: -25px;
@@ -136,20 +122,21 @@ h4 {
 
 .prof-card {
     display: none;
-    position: absolute;
-    top: -72px;
-    left: -42px;
+	position: absolute;
+	top: -72px;
+	left: -42px;
     width: 140px;
     height: 60px;
-    background-color: #d8d8d8;
-    color: #212121;
-    /* box-shadow: 0px -1px 16px 0px rgba(0,0,0,0.2); */
-    border-radius: .25rem;
-    z-index: 1;
-    text-align: left;
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 5px;
+	background-color: #1a5ba0;
+	color: white;
+	box-shadow: 0px -1px 16px 0px rgba(0,0,0,0.2);
+	border-radius: .25rem;
+	z-index: 1;
+	
+	text-align: center;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .prof-drop:hover .prof-card {display: block;}
 
@@ -159,8 +146,8 @@ h4 {
     box-shadow: 0px 0px 3px 2px rgba(0,0,0,.2);
     width: 370px;
     height: auto;
-    margin-left: 80px;
-	margin-top: 80px;
+    margin-left: 50px;
+	margin-top: 40px;
 	padding-bottom: 20px;
 	border-radius: .25rem;
 
@@ -250,8 +237,8 @@ h4 {
 	/* display: none; */
 }
 #jon-button {
-	top: -701px;
-    left: 142px;
+	top: -799px;
+    left: 178px;
 	display: none; 
 }
 .apex {
@@ -382,17 +369,19 @@ h4 {
 }
 
 #office-label {
-	background-color: #5d82aa!important;
-    position: relative;
-    margin: 0;
-    top: 70px;
-    width: 373px;
-    font-size: 11pt;
-    font-weight: 400;
-    padding: 6px 20px;
-}
-.ol-side {
-    
+	background-color: darkorange!important;
+	position: relative;
+	top: -955px;
+    /* margin-left: 20px; */
+	width: 144px;
+
+	font-size:11pt; 
+	font-weight:400;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 #review-label {
 	width: 86px;
