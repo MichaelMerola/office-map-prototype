@@ -1,10 +1,25 @@
 var defaultObj;
 var activeObj;
 
+var userList = [
+    "jon-button",
+    "merola-button",
+    "jorge-button",
+    "meeta-button",
+    "meetb-button",
+    "restroom-button",
+    "printer-button",
+    "coffee-button"
+]
+
 function start() {
     defaultObj = document.getElementById('default-detail');
     activeObj = defaultObj;
     activeObj.style.display = "block";
+
+    userList.forEach(function (item, index) {
+        document.getElementById(item).style.display = "flex";
+    });
 }
 
 function displayDetail(c) {
@@ -16,6 +31,7 @@ function displayDetail(c) {
         activeObj.style.opacity = "0";
         activeObj.style.display = "none";
         activeObj = clickedObj;
+
         //turn on new
         clickedObj.style.display = "block";
         setTimeout(() => {
@@ -36,37 +52,67 @@ function displayDetail(c) {
     }
     //set active
     console.log(activeObj);
- }
+}
 
 
 
- function searchSkills() {
+function searchSkills() {
     console.log("SUBMIT")
 
     var x = document.getElementById("skill-search");
     var input = x.elements[0].value;
 
-    if (input === "apex") {
+    if (input === "python") {
 
-        var elements = document.getElementsByClassName("apex");
+        var elements = document.getElementsByClassName("python");
         var names = '';
         for(var i=0; i<elements.length; i++) {
-            elements[i].style.display = "flex";
+            elements[i].style.transform = "scale(1.3)";
         }
+        displayDetail(document.getElementById('merola'));
     }
     else if (input === "luis" || input === "luis vega"){
-        document.getElementById("jon-button").style.display = "flex";
+        var target = document.getElementById("jon-button");
+        target.style.transform = "scale(1.3)";
+        // target.style.border = "100px blue";
+        // target.scrollIntoView();
+
+        displayDetail(document.getElementById('jon'))
+    }
+    else if (input === "michael" || input === "michael merola"){
+        document.getElementById("merola-button").style.transform = "scale(1.3)";
+        displayDetail(document.getElementById('merola'));
+    }
+    else if (input === "jorge" || input === "jorge moreno"){
+        document.getElementById("jorge-button").style.transform = "scale(1.3)";
+        displayDetail(document.getElementById('jorge'));
     }
     else if (input === "coffee") {
-        document.getElementById("coffee-label").style.display = "flex";
+        document.getElementById("coffee-button").style.transform = "scale(1.3)";
+        displayDetail(document.getElementById('coffee'));
+        
+    }
+    else if (input === "printer") {
+        document.getElementById("printer-button").style.transform = "scale(1.3)";
+        displayDetail(document.getElementById('printer'));
+        
+    }
+    else if (input === "restroom") {
+        var target = document.getElementById("restroom-button");
+        target.style.transform = "scale(1.3)";
+        target.scrollIntoView();
+        // displayDetail(document.getElementById('printer'));
+        
+    }
+    else if (input === "meeting b") {
+        document.getElementById("meetb-button").style.transform = "scale(1.3)";
+        displayDetail(document.getElementById('meet-b'));
         
     }
     else {
-        document.getElementById("riso-button").style.display = "none";
-        document.getElementById("alex-button").style.display = "none";
-        document.getElementById("merola-button").style.display = "none";
-        document.getElementById("jon-button").style.display = "none";
-        document.getElementById("coffee-label").style.display = "none";
+        userList.forEach(function (item, index) {
+            document.getElementById(item).style.transform = "scale(1)";
+        });
 
         //turn off
         activeObj.style.opacity = "0";
@@ -78,9 +124,6 @@ function displayDetail(c) {
             defaultObj.style.opacity = "1";
         }, 155);
     }
- }
+}
 
- function emailRiso () {
-    window.open('https://mail.google.com/mail/u/0/#inbox?compose=164fb7e7041c6478','_blank');
- }
 

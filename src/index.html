@@ -10,9 +10,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="../mdbootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="mdbootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
-    <link href="../mdbootstrap/css/mdb.min.css" rel="stylesheet">
+    <link href="mdbootstrap/css/mdb.min.css" rel="stylesheet">
 
     <!-- CUSTOM -->
     <link rel="stylesheet" href="styles.css">
@@ -29,365 +29,488 @@
             <span class="name-title">VANTAGE</span>
         </h1>
 
-        <!-- SEARCH BAR -->
-        <form onsubmit="return false" id="skill-search" class="searchbar">
-            <i class="fa fa-search search-icon" aria-hidden="true"></i>
-            <input class="form-control search-custom" type="text"
-                placeholder="search for names, teams, skills, locations..." aria-label="Search"/>
-            <input type="submit" style="display:none;" onclick="searchSkills()"/>
-        </form>
-    </div>
+        <div class="tool-container">
 
-    <div class="span-col-7" id="body">
-        <!-- BODY -->
+            <!-- SEARCH BAR -->
+            <form onsubmit="return false" id="skill-search" class="searchbar">
+                <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                <input class="form-control search-custom" type="text"
+                    placeholder="search for names, teams, skills, locations..." aria-label="Search"/>
+                <input type="submit" style="display:none;" onclick="searchSkills()"/>
+            </form>
 
-        <div id="body-container" >
-            <div>
-                <ul id="map-item">
-                    <!-- MAP -->
-                    <img src="assets/boulder-east-map.PNG" id="map">
-                </ul>
-            </div>
-
-            <div style="display: flex">
-                <!-- RICHARD SELIGA -->
-                <div class="prof-drop apex riso" id="riso-button">
-                    <div class="prof-card">
-                        <p style="font-weight: 400; font-size: 12pt; margin-bottom: 1px;">Richard Seliga</p>
-                        <p style="font-weight: 300; font-size: 10pt;">CORE Developer</p>
-                    </div>
-                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('riso'))">
-                        <img src="assets/riso.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
-                </div>
-
-                <!-- MICHAEL MEROLA -->
-                <div class="prof-drop apex" id="merola-button">
-                    <div class="prof-card">
-                            <p style="font-weight: 400; font-size: 12pt; margin-bottom: 1px;">Michael Merola</p>
-                            <p style="font-weight: 300; font-size: 10pt;">CORE Intern</p>
-                    </div>
-                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('merola'))">
-                        <img src="assets/mmerola.png" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
-                </div>
-
-                <!-- ALEX ACKERMAN -->
-                <div class="prof-drop apex" id="alex-button">
-                    <div class="prof-card">
-                        <p style="font-weight: 400; font-size: 12pt; margin-bottom: 1px;">Alex Ackerman</p>
-                        <p style="font-weight: 300; font-size: 10pt;">CORE Manager</p>
-                    </div>
-                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('alex'))">
-                        <img src="assets/alexack.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
-                </div>
-
-                <!-- LUIS VEGA -->
-                <div class="prof-drop" id="jon-button">
-                    <div class="prof-card">
-                        <p style="font-weight: 400; font-size: 12pt;">Luis Vega
-                            <!-- <i class="far fa-dot-circle"></i> -->
-                        </p>
-                        <p style="font-weight: 300; font-size: 10pt;">Sales Manager</p>
-                    </div>
-                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('jon'))">
-                        <img src="assets/luis.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
-                </div>
-
-            </div>
-
-            <button id="coffee-label" class="btn btn-default coffee-btn" onclick="displayDetail(document.getElementById('coffee'))">
-                Coffee Bot</button>
-
-        </div>
-
-    </div>
-
-    <div class="span-col-2" id="sidebar">
-
-        <div style="display: inline-flex; margin-left: 78px;">
-            <button id="office-label" class="btn btn-default">
+            <button id="office-filter" class="btn btn-default">
                 <span>Boulder East <i 
                 style="right: -10px;"
                 class="fa fa-caret-down"></i></span>
             </button>
         </div>
+    </div>
 
-        <!-- PLACEHOLDER -->
-        <div class="employee-detail" id="default-detail">
-            <!-- Boulder, East Office  -->
-        </div>
+    <!-- MAP -->
+    <div class="span-col-7" id="body">
+        <!-- BODY -->
 
-        <!-- RICHARD SELIGA-->
-        <div class="employee-detail" id="riso">
-
-            <div id="info">
-
-                <div id="info-col1">
-
-                    <img src="assets/riso.jpg" id="prof">
-                    <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
-
-                </div>
-
-                <div id="info-col2">
-                    <h3>Richard Seliga</h3>
-                    <p>Boulder East</p>
-                    <p>(719) 999-9999</p>
-                    <button type="button" id="email-btn" class="btn btn-default" onclick="emailRiso()">
-                        richard.seliga@zayo.com</button>
- 
-                </div>
-
+        <div id="body-container" >
+            <div class="map-container ">
+                <!-- MAP -->
+                <img src="assets/boulder-east-map.PNG" class="map">
             </div>
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Experience</button>
-                <h4>Salesforce Development
+            <div style="display: flex">
 
-                    <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
-                </h4>
-                <p>Junior Developer</p>
-                <p>1 Year Team Experience</p>
+                <!-- LUIS VEGA -->
+                <div class="prof-drop" id="jon-button">
+                    <div class="status" id="present"></div>
 
-            </div>
+                    <div class="prof-card">
+                        <p style="font-weight: bold; font-size: 12pt;">Luis Vega</p>
+                        <p style="font-weight: 300; font-size: 10pt;">Sales Manager</p>
+                        <p style="font-weight: 300; font-size: 10pt;"> 
+                            <span style="color: #00e000;">●</span>
+                            <span style="font-style: italic;">Present</span>
+                        </p>
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Active Projects</button>
-                <h4>BOSS UI</h4>
-                <p>Billing On Salesforce Simplified Redesign</p>
-                <div style="display:flex">
-                    <p>Progress: </p> 
-                    <button id="review-label" class="btn btn-default">Code Review</button>
+                    </div>
+                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('jon'))">
+                        <img src="assets/people/luis.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
-                <p></p>
-    
-            </div>
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Skills</button>
-                <h4>Programming</h4>
-                <div style="display:flex">
-                    <p>Apex</p> 
-                    <button id="skill-label-advanced" class="btn btn-default">Advanced</button>
+                <!-- MICHAEL MEROLA -->
+                <div class="prof-drop python" id="merola-button">
+                    <div class="status" id="away"></div>
+
+                    <div class="prof-card">
+                            <p style="font-weight: bold; font-size: 12pt; margin-bottom: 1px;">Michael Merola</p>
+                            <p style="font-weight: 300; font-size: 10pt;">CORE Intern</p>
+                            <p style="font-weight: 300; font-size: 10pt;"> 
+                                <span style="color: red;">●</span>
+                                <span style="font-style: italic;">Away</span>
+                            </p>
+                    </div>
+                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('merola'))">
+                        <img src="assets/people/mmerola.png" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
-                <div style="display:flex">
-                    <p>Angular</p> 
-                    <button id="skill-label-advanced" class="btn btn-default">Advanced</button>
+                <!-- JORGE MORENO -->
+                <div class="prof-drop python" id="jorge-button">
+                    <div class="status" id="remote"></div>
+
+                    <div class="prof-card">
+                            <p style="font-weight: bold; font-size: 12pt; margin-bottom: 1px;">Jorge Moreno</p>
+                            <p style="font-weight: 300; font-size: 10pt;">CORE Intern</p>
+                            <p style="font-weight: 300; font-size: 10pt;"> 
+                                <span style="color: purple;">●</span>
+                                <span style="font-style: italic;">Remote</span>
+                            </p>
+                    </div>
+                    <button type="submit" class="prof-button" onclick="displayDetail(document.getElementById('jorge'))">
+                        <img src="assets/people/jorge.jpg" style="width: 100%; border-radius: 60%; border-width: 0px;" ></button>
                 </div>
-                <h4 style="margin-top: 10px">Other</h4>
-                <div style="display:flex">
-                    <p>Ping Pong</p> 
-                    <button id="skill-label-master" class="btn btn-default">Master</button>
-                </div>
-                <p>Makes great coffee</p>
-                <p>Loves to help others</p>
+
                 
-    
+
             </div>
 
-            
+            <!-- MEETING ROOMS -->
+            <button id="meeta-button" class="item-button room" onclick="displayDetail(document.getElementById('meet-a'))">
+                MEET A141
+            </button>
+            <button id="meetb-button" class="item-button room" onclick="displayDetail(document.getElementById('meet-b'))">
+                MEET B300
+            </button>
+            <button id="meetlarge-button" class="item-button room" onclick="displayDetail(document.getElementById('meet-large'))">
+                MEET<br>LARGE
+            </button>
+
+            <!-- COFFEE -->
+            <button id="coffee-button" class="item-button" onclick="displayDetail(document.getElementById('coffee'))">
+                COFFEE
+            </button>
+            <!-- PRINTER -->
+            <button id="printer-button" class="item-button" onclick="displayDetail(document.getElementById('printer'))">
+                PRINTER
+            </button>
+            <!-- RESTROOM -->
+            <button id="restroom-button" class="item-button" onclick="displayDetail(document.getElementById('restroom'))">
+                RESTROOM
+            </button>
 
         </div>
 
-        <!-- MICHAEL MEROLA-->
-        <div class="employee-detail" id="merola">
+    </div>
 
-            <div id="info">
+    <!-- SIDEBAR -->
+    <div class="span-col-2" id="sidebar">
 
-                <div id="info-col1">
+        <div class="scroll-side">
+            <!-- PLACEHOLDER -->
+            <div class="pic-detail" id="default-detail">
+                <!-- Boulder, East Office  -->
+                <div>
+                    <img src="assets/office.jpg" id="coff-pic">
+                </div>
 
-                    <img src="assets/mmerola.png" id="prof">
-                    <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
+                <div id="notes-center">
+                    <button type="button" id="office-title" class="btn btn-default">Boulder East Office</button>
+                    <p style="">999 29th St. Boulder 80302</p>
+                    <!-- <p style="font-style: italic;">~150 employees</p> -->
 
                 </div>
 
-                <div id="info-col2">
-                    <h3 style="font-size: 23pt">Michael Merola</h3>
-                    <p>Boulder East</p>
-                    <p>(719) 999-9999</p>
-                    <button type="button" id="email-btn" class="btn btn-default">michael.merola@zayo.com</button>
-    
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Teams</button>
+                    <h4>Engineering</h4>
+                    <h4 style="margin-top: 10px">Finance</h4>
+                    <h4 style="margin-top: 10px">Executive</h4>
+        
                 </div>
-
+        
             </div>
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Experience</button>
-                <h4>Salesforce Development
-
-                    <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
-                </h4>
-                <p>INTERN</p>
-                <p>2 Months Team Experience</p>
-
-            </div>
-
-            <div id="notes">
-                <button id="note-label" class="btn btn-default">Active Projects</button>
-                <h4>INTERNOVATE</h4>
-                <p>Knowledge Bank Project</p>
-    
-            </div>
-
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Skills</button>
-                <h4>Programming</h4>
-                <div style="display:flex">
-                    <p>Apex</p> 
-                    <button id="skill-label-low" class="btn btn-default">Low</button>
-                </div>
-                <div style="display:flex">
-                    <p>Angular</p> 
-                    <button id="skill-label-low" class="btn btn-default">Low</button>
-                </div>
-                <h4 style="margin-top: 10px">Other</h4>
-                <div style="display:flex">
-                    <p>Ping Pong</p> 
-                    <button id="skill-label-low" class="btn btn-default">Low</button>
-                </div>
-    
-            </div>
-    
-                
-    
-        </div>
-
-        <!-- ALEX ACKERMAN-->
-        <div class="employee-detail" id="alex">
+            <!-- LUIS VEGA -->
+            <div class="employee-detail" id="jon">
 
                 <div id="info">
-    
+
                     <div id="info-col1">
-    
-                        <img src="assets/alexack.jpg" id="prof">
+
+                        <img src="assets/people/luis.jpg" id="prof"> </img>
+                        
                         <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
-    
+
                     </div>
-    
+
                     <div id="info-col2">
-                        <h3>Alex Ackerman</h3>
-                        <p>Boulder East</p>
+                        <h3> Luis Vega 
+                            <span style="color: #00e000;">●</span>
+                        </h3>
+                        <p style="font-style: italic;">
+                            Boulder East
+                        </p>
+
                         <p>(719) 999-9999</p>
-                        <button type="button" id="email-btn" class="btn btn-default">alex.ackerman@zayo.com</button>
-     
+                        <button type="button" id="email-btn" class="btn btn-default">luis.vega@vantage.com</button>
+    
                     </div>
-    
+
                 </div>
-    
+
                 <div id="notes">
                     <button type="button" id="note-label" class="btn btn-default">Experience</button>
-                    <h4>Salesforce Development
-    
+                    <h4>Inside Sales
+
                         <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
                     </h4>
                     <button id="manager-label" class="btn btn-default">Manager</button>
-                    <p>3 Years Team Experience</p>
-    
+                    <p>2 Years Team Experience</p>
+
                 </div>
-    
+
                 <div id="notes">
                     <button type="button" id="note-label" class="btn btn-default">Oversees</button>
-                    <h4>CORE Team</h4>
-                    <p>Richard Seliga</p>
-                    <p>Michael Merola</p>
+                    <h4>Outreach Team</h4>
+                    <p>Jennifer Johnson</p>
+                    <p>Markus Roberts</p>
+                    <p>Diana Lopez</p>
                     <p></p>
         
                 </div>
+
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Skills</button>
+                    <h4>Sales</h4>
+                    <p>100 Dark Fiber Sales in Q2</p> 
+                    <p>Excel</p> 
+                    <h4 style="margin-top: 10px">Other</h4>
+                    <p>Graduated CU Boulder</p>
+                    <p>Loves to Golf</p>
+        
+                </div>
+
+                
+
+            </div>
+
+            <!-- RICHARD SELIGA-->
+            <div class="employee-detail" id="riso">
+
+                <div id="info">
+
+                    <div id="info-col1">
+
+                        <img src="assets/riso.jpg" id="prof">
+                        <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
+
+                    </div>
+
+                    <div id="info-col2">
+                        <h3>Richard Seliga</h3>
+                        <p>Boulder East</p>
+                        <p>(719) 999-9999</p>
+                        <button type="button" id="email-btn" class="btn btn-default" onclick="emailRiso()">
+                            richard.seliga@zayo.com</button>
     
+                    </div>
+
+                </div>
+
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Experience</button>
+                    <h4>Salesforce Development
+
+                        <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
+                    </h4>
+                    <p>Junior Developer</p>
+                    <p>1 Year Team Experience</p>
+
+                </div>
+
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Active Projects</button>
+                    <h4>BOSS UI</h4>
+                    <p>Billing On Salesforce Simplified Redesign</p>
+                    <div style="display:flex">
+                        <p>Progress: </p> 
+                        <button id="review-label" class="btn btn-default">Code Review</button>
+                    </div>
+                    <p></p>
+        
+                </div>
+
                 <div id="notes">
                     <button type="button" id="note-label" class="btn btn-default">Skills</button>
                     <h4>Programming</h4>
                     <div style="display:flex">
                         <p>Apex</p> 
-                        <button id="skill-label-master" class="btn btn-default">Master</button>
+                        <button id="skill-label-advanced" class="btn btn-default">Advanced</button>
                     </div>
                     <div style="display:flex">
                         <p>Angular</p> 
-                        <button id="skill-label-master" class="btn btn-default">Master</button>
+                        <button id="skill-label-advanced" class="btn btn-default">Advanced</button>
                     </div>
                     <h4 style="margin-top: 10px">Other</h4>
-                    <p>Graduated CU Boulder</p>
-                    <p>Loves to cook</p>
+                    <div style="display:flex">
+                        <p>Ping Pong</p> 
+                        <button id="skill-label-master" class="btn btn-default">Master</button>
+                    </div>
+                    <p>Makes great coffee</p>
+                    <p>Loves to help others</p>
+                    
         
                 </div>
-    
+
                 
-    
-        </div>
 
-        <!-- LUIS VEGA -->
-        <div class="employee-detail" id="jon">
+            </div>
 
-            <div id="info">
+            <!-- MICHAEL MEROLA -->
+            <div class="employee-detail" id="merola">
 
-                <div id="info-col1">
+                <div id="info">
 
-                    <img src="assets/luis.jpg" id="prof">
-                    <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
+                    <div id="info-col1">
+
+                        <img src="assets/people/mmerola.png" id="prof">
+                        <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
+
+                    </div>
+
+                    <div id="info-col2">
+                        <h3 style="font-size: 23pt; letter-spacing: -1.4px;">Michael Merola
+                            <span style="color: red;">●</span>
+                        </h3>
+                        <p>Boulder East</p>
+                        <p>(719) 999-9999</p>
+                        <button type="button" id="email-btn" class="btn btn-default">michael.merola@vantage.com</button>
+        
+                    </div>
 
                 </div>
 
-                <div id="info-col2">
-                    <h3>Luis Vega</h3>
-                    <p>Boulder East</p>
-                    <p>(719) 999-9999</p>
-                    <button type="button" id="email-btn" class="btn btn-default">luis.vega@vantage.com</button>
- 
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Experience</button>
+                    <h4>Salesforce Development
+
+                        <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
+                    </h4>
+                    <p>INTERN</p>
+                    <p>2 Months Team Experience</p>
+
                 </div>
 
+                <div id="notes">
+                    <button id="note-label" class="btn btn-default">Active Projects</button>
+                    <h4>INTERNOVATE</h4>
+                    <p>Knowledge Bank Project</p>
+        
+                </div>
+
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Skills</button>
+                    <h4>Programming</h4>
+                    <div style="display:flex">
+                        <p>Python</p> 
+                        <button id="skill-label-advanced" class="btn btn-default">Advanced</button>
+                    </div>
+                    <div style="display:flex">
+                        <p>Angular</p> 
+                        <button id="skill-label-low" class="btn btn-default">Low</button>
+                    </div>
+                    <h4 style="margin-top: 10px">Other</h4>
+                    <div style="display:flex">
+                        <p>Ping Pong</p> 
+                        <button id="skill-label-low" class="btn btn-default">Low</button>
+                    </div>
+        
+                </div>
+        
+                    
+        
             </div>
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Experience</button>
-                <h4>Inside Sales
+            <!-- JORGE MORENO -->
+            <div class="employee-detail" id="jorge">
 
-                    <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
-                </h4>
-                <button id="manager-label" class="btn btn-default">Manager</button>
-                <p>2 Years Team Experience</p>
+                <div id="info">
 
+                    <div id="info-col1">
+
+                        <img src="assets/people/jorge.jpg" id="prof">
+                        <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
+
+                    </div>
+
+                    <div id="info-col2">
+                        <h3 style="font-size: 23pt; letter-spacing: -1.4px;">Jorge Moreno
+                            <span style="color: purple;">●</span>
+                        </h3>
+                        <p>Boulder East</p>
+                        <p>(719) 999-9999</p>
+                        <button type="button" id="email-btn" class="btn btn-default">jorge.moreno@vantage.com</button>
+        
+                    </div>
+
+                </div>
+
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Experience</button>
+                    <h4>Salesforce Development
+
+                        <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
+                    </h4>
+                    <p>INTERN</p>
+                    <p>4 Months Team Experience</p>
+
+                </div>
+
+                <div id="notes">
+                    <button id="note-label" class="btn btn-default">Active Projects</button>
+                    <h4>INTERNAL OPS</h4>
+                    <p>Shipping Development</p>
+        
+                </div>
+
+                <div id="notes">
+                    <button type="button" id="note-label" class="btn btn-default">Skills</button>
+                    <h4>Programming</h4>
+                    <div style="display:flex">
+                        <p>Python</p> 
+                        <button id="skill-label-advanced" class="btn btn-default">Advanced</button>
+                    </div>
+                    <div style="display:flex">
+                        <p>Angular</p> 
+                        <button id="skill-label-low" class="btn btn-default">Low</button>
+                    </div>
+                    <h4 style="margin-top: 10px">Other</h4>
+                    <div style="display:flex">
+                        <p>Ping Pong</p> 
+                        <button id="skill-label-low" class="btn btn-default">Low</button>
+                    </div>
+        
+                </div>
+        
+                    
+        
             </div>
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Oversees</button>
-                <h4>Outreach Team</h4>
-                <p>Jennifer Johnson</p>
-                <p>Markus Roberts</p>
-                <p>Diana Lopez</p>
-                <p></p>
-    
-            </div>
+            <!-- ALEX ACKERMAN-->
+            <div class="employee-detail" id="alex">
 
-            <div id="notes">
-                <button type="button" id="note-label" class="btn btn-default">Skills</button>
-                <h4>Sales</h4>
-                <p>100 Dark Fiber Sales in Q2</p> 
-                <p>Excel</p> 
-                <h4 style="margin-top: 10px">Other</h4>
-                <p>Graduated CU Boulder</p>
-                <p>Loves to Golf</p>
-    
-        </div>
-
+                    <div id="info">
+        
+                        <div id="info-col1">
+        
+                            <img src="assets/alexack.jpg" id="prof">
+                            <button type="button" id="chat-btn" class="btn btn-default">G-Chat</button>
+        
+                        </div>
+        
+                        <div id="info-col2">
+                            <h3>Alex Ackerman</h3>
+                            <p>Boulder East</p>
+                            <p>(719) 999-9999</p>
+                            <button type="button" id="email-btn" class="btn btn-default">alex.ackerman@zayo.com</button>
+        
+                        </div>
+        
+                    </div>
+        
+                    <div id="notes">
+                        <button type="button" id="note-label" class="btn btn-default">Experience</button>
+                        <h4>Salesforce Development
+        
+                            <!-- <button type="button" id="current-label" class="btn btn-default">Experience</button> -->
+                        </h4>
+                        <button id="manager-label" class="btn btn-default">Manager</button>
+                        <p>3 Years Team Experience</p>
+        
+                    </div>
+        
+                    <div id="notes">
+                        <button type="button" id="note-label" class="btn btn-default">Oversees</button>
+                        <h4>CORE Team</h4>
+                        <p>Richard Seliga</p>
+                        <p>Michael Merola</p>
+                        <p></p>
             
+                    </div>
+        
+                    <div id="notes">
+                        <button type="button" id="note-label" class="btn btn-default">Skills</button>
+                        <h4>Programming</h4>
+                        <div style="display:flex">
+                            <p>Apex</p> 
+                            <button id="skill-label-master" class="btn btn-default">Master</button>
+                        </div>
+                        <div style="display:flex">
+                            <p>Angular</p> 
+                            <button id="skill-label-master" class="btn btn-default">Master</button>
+                        </div>
+                        <h4 style="margin-top: 10px">Other</h4>
+                        <p>Graduated CU Boulder</p>
+                        <p>Loves to cook</p>
+            
+                    </div>
+        
+                    
+        
+            </div>
 
-        </div>
-
-         <!-- COFFEE BOT -->
-         <div class="coffee-detail" id="coffee">
+            <!-- COFFEE BOT -->
+            <div class="pic-detail" id="coffee">
 
                 <div>
-
                     <img src="assets/coffee.jpg" id="coff-pic">
-    
+
                 </div>
-    
+
                 <div id="notes">
                     <button type="button" id="coff-title" class="btn btn-default">Coffee Bot</button>
                     <h4>Boulder East Kitchen</h4>
                     <p>Enjoy fast hot drinks with coworkers!</p>
-    
+
                 </div>
-    
+
                 <div id="notes">
                     <button type="button" id="note-label" class="btn btn-default">Menu</button>
                     <h4>Coffee</h4>
@@ -399,12 +522,97 @@
                         <p>Hot Chocolate</p>
                         <p>Chai Tea</p>
                         <p>Chocolate Chai</p>
-        
                 </div>
-    
-                
-    
+
+                <div id="notes-center">
+                    <button type="button" id="note-label" class="btn btn-default">Status</button>
+                    <button type="button" id="reserve" class="btn btn-default"
+                        style="background-color: rgb(255, 115, 0)!important; margin-top:5px;">
+                        ! Refill Needed !
+                    </button>
+                </div>
+        
             </div>
+
+            <!-- PRINTER -->
+            <div class="pic-detail" id="printer">
+
+                <div>
+                    <img src="assets/printer.jpg" id="coff-pic">
+
+                </div>
+
+                <div id="notes-center">
+                    <button type="button" id="print-title" class="btn btn-default">Printer</button>
+                    <h4> East Supplies Room</h4>
+                </div>
+
+                <div id="notes-center">
+                    <button type="button" id="note-label" class="btn btn-default">Print</button>
+                    <button type="button" id="note-label" class="btn btn-default">Queue</button>
+
+                </div>
+
+                <div id="notes-center">
+                    <button type="button" id="note-label" class="btn btn-default">Status</button>
+                    <button type="button" id="reserve" class="btn btn-default"
+                        style="background-color: #00b800!important; margin-top:5px;">
+                        Full
+                    </button>
+                </div>
+        
+            </div>
+
+            <!-- MEETING ROOM A -->
+            <div class="pic-detail" id="meet-a">
+
+                <div>
+                    <img src="assets/meeting-a.jpeg" id="coff-pic">
+
+                </div>
+
+                <div id="notes-center">
+                    <button type="button" id="meeting-title" class="btn btn-default">Meeting Room A141</button>
+                    <button type="button" id="meeting-status" class="btn btn-default"
+                        style="background-color: red!important;">Unavailable</button>
+
+                    <h4>Boulder East</h4>
+
+                    <p>fits up to 15 people</p>
+                    <p>HDMI, WiFi-Access</p>
+
+                    <button type="button" id="reserve" class="btn btn-default">Reserve</button>
+
+                </div>
+        
+            </div>
+
+            <!-- MEETING ROOM B -->
+            <div class="pic-detail" id="meet-b">
+
+                <div>
+                    <img src="assets/meeting-b.jpg" id="coff-pic">
+
+                </div>
+
+                <div id="notes-center">
+                    <button type="button" id="meeting-title" class="btn btn-default">Meeting Room B300</button>
+                    <button type="button" id="meeting-status" class="btn btn-default"
+                        style="background-color: #00e000!important;">open</button>
+
+                    <h4>Boulder East</h4>
+
+                    <p>fits up to 10 people</p>
+                    <p>HDMI, WiFi-Access</p>
+
+                    <button type="button" id="reserve" class="btn btn-default">Reserve</button>
+
+                </div>
+        
+            </div>
+
+        </div>
+
     </div>
 
 </div>            
