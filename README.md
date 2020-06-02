@@ -14,3 +14,6 @@ streamlines HR data organization and provides easy-access to entire company
 Summer 2018 Internovate Competition winner
 
 built with simple HTML/CSS and Javascript
+
+## Demo
+https://www.youtube.com/watch?v=iUY9WiXNHlE
